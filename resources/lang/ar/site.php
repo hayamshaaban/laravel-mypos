@@ -33,10 +33,17 @@ return [
 'data_not_found'=>'لا توجد اى نتائج',
 
 'categories'=>'الأقسام',
+'category'=>'اسم القسم',
+
 'all.categories'=>' كل الأقسام',
 'purchase_price'=>'سعر الشراء',
 'sale_price'=>'سعر البيع',
 'stock'=>'المخزن',
+'profit_percent'=>'نسبة الربح',
+'description'=>'الوصف',
+'products_count'=>'عدد المنتجات',
+'related_products'=>' المنتجات المرتبطة',
+
 
 
 

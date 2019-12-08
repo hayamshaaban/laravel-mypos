@@ -26,6 +26,17 @@
                                  <input type="text" name="search" class="form-control" placeholder="@lang('site.search')">
 
                                 </div>
+
+                                <div class="col-md-4">
+                            <select name="category_id" class="form-control">
+                            <option value="">@lang('site.all.categories')</option>
+                                    @foreach ($categories as $category )
+                           <option value="{{$category->id}}">{{$category->name}}</option>
+                                      
+                                    @endforeach
+                            </select>
+                                 </div>
+
                                 <div class="col-md-4">
                                         <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i>@lang('site.search')</button>
                                     @if (auth()->user()->hasPermission('create_users'))
@@ -49,9 +60,11 @@
                                     <th>#</th>
                                     <th>@lang('site.name')</th>
                                     <th>@lang('site.description')</th>
+                                    <th>@lang('site.category')</th>
                                     <th>@lang('site.image')</th>
                                     <th>@lang('site.purchase_price')</th>
                                     <th>@lang('site.sale_price')</th>
+                                    <th>@lang('site.profit_percent')%</th>
                                     <th>@lang('site.stock')</th>
                                 
                                     <th>@lang('site.action')</th>
@@ -63,9 +76,11 @@
                                     <td>{{$index + 1}}</td>
                                     <td>{{$product->name}}</td>
                                     <td>{!!$product->description!!}</td>
+                                    <td>{{$product->category->name}}</td>
                                     <td><img src="{{$product->image_path}}" style="width: 100px;" class="img-thumbnail"></td>
                                     <td>{{$product->purchase_price}}</td>
                                     <td>{{$product->sale_price}}</td>
+                                    <td>{{$product->profit_percent}}%</td>
                                     <td>{{$product->stock}}</td>
 
                                     <td>

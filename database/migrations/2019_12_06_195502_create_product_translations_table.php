@@ -13,6 +13,7 @@ class CreateProductTranslationsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('product_translations', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');

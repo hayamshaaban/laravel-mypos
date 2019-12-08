@@ -14,9 +14,8 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->integer('category_id')->unsigned();
+            $table->unsignedBigInteger('category_id');
             $table->string('image')->default('default.jpg');
             $table->double('purchase_price',8,2);
             $table->double('sale_price',8,2);

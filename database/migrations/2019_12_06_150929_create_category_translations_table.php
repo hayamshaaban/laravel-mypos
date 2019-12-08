@@ -13,6 +13,7 @@ class CreateCategoryTranslationsTable extends Migration
      */
     public function up()
     {
+
         
         Schema::create('category_translations', function (Blueprint $table) {
             $table->engine = 'InnoDB';
