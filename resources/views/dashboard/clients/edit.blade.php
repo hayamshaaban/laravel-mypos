@@ -6,11 +6,11 @@
 
         <section class="content-header">
 
-            <h1>@lang('site.products')</h1>
+            <h1>@lang('site.clients')</h1>
 
         <ol class="breadcrumb">
             <li><a href="{{route('dashboard.index')}}"><i class="fa fa-dashboard"></i> @lang('site.dashboard')</a></li>
-            <li><a href="{{route('dashboard.products.index')}}"> @lang('site.products')</a></li>
+            <li><a href="{{route('dashboard.clients.index')}}"> @lang('site.clients')</a></li>
             <li class="active"> @lang('site.edit')</li>
             
         </ol>
@@ -25,72 +25,32 @@
                <div class="box-body">
                 @include('partials._errors')
                 
-               <form action="{{route('dashboard.products.update',$product->id)}}" method="POST" enctype="multipart/form-data">
+               <form action="{{route('dashboard.clients.update',$client->id)}}" method="POST" >
                 {{csrf_field()}}
                 {{method_field('put')}}
-
-                <div class="form-group">
-                    <label>@lang('site.categories')</label>
-                    <select name="category_id" class="form-control">
-                    <option value="">@lang('site.all.categories')</option>
-                
-                    @foreach ($categories as $category )
-                    <option value="{{$category->id}}" {{$product->id==$category->id ? 'selected' : ''}}>{{$category->name}}</option>
-                    @endforeach
-                </select>
-                </div>
-
-                @foreach (config('translatable.locales') as $locale)
-                
-                <div class="form-group">
-                        <label>@lang('site.' .$locale. '.name')</label>
-                <input type="text" name="{{$locale}}[name]"  class="form-control" value="{{$product->name}}">
-   
-                    </div>
-              
-                    <div class="form-group">
-                            <label>@lang('site.' .$locale.'.description')</label>
-                    <textarea  name="{{$locale}}[description]"  class="form-control ckeditor" >{{$product->description}}</textarea>
-       
-                        </div>
-                    
-                @endforeach
-            </div>
-            {{--image and image preview--}}
             <div class="form-group">
-                    <label>@lang('site.image')</label>
-                    <input type="file" name="image" placeholder="@lang('site.image')" class="form-control image">
-
+               <label >@lang('site.name')</label>
+            <input type="text" name="name" class="form-control"  value= "{{$client->name}}">
             </div>
+            @for($i=0; $i<2;$i++)
             <div class="form-group">
-            <img src="{{$product->image_path}}" style="width: 100px;" class="img-thumbnail image-preview" alt=""> 
-
-            </div>
-            <div class="form-group">
-                    <label>@lang('site.purchase_price')</label>
-                    <input type="number" name="purchase_price" step="0.01"  class="form-control" value="{{$product->purchase_price}}">
-
-            </div>
-            <div class="form-group">
-                    <label>@lang('site.sale_price')</label>
-                    <input type="number" name="sale_price" step="0.01" value="{{$product->sale_price}}" class="form-control">
-
-            </div>
-        
-            <div class="form-group">
-                    <label>@lang('site.stock')</label>
-                    <input type="number" name="stock"  class="form-control" value="{{$product->stock}}">
-
-            </div>
-
-                
+                <label >@lang('site.phone')</label>
+                <input type="text" name="phone[]" class="form-control" value= "{{$client->phone[$i] ?? ''}}">
+             </div> 
+            @endfor
+            
+           
+             <div class="form-group">
+                <label >@lang('site.address')</label>
+                <textarea name="address" class="form-control">{{$client->address}}</textarea>
+             </div>
 <!--
                         <div class="form-group">
                             <label>@lang('site.permissions')</label>
                             
                             <div class="nav-tabs-custom">
                                 @php
-                                   $models=['users','products','products'] ;
+                                   $models=['users','clients','products'] ;
                                    $maps=['create','read','update','delete']
                                 @endphp
 

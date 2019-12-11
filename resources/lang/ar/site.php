@@ -45,12 +45,31 @@ return [
 'related_products'=>' المنتجات المرتبطة',
 
 
+'clients'=>'العملاء',
+'data_not_clients_found'=>'للاسف لا يوجد اى عملاء',
+'name'=>'الاسم',
+'phone'=>'الهاتف',
+'address'=>'العنوان',
+
+'orders'=>'الطلبات',
+'add_order'=>'اضف طلب',
+'product'=>'اسم المنتج',
+'quantity'=>'الكمية',
+'price'=>'السعر',
+'total'=>'التكلفه الكلية',
+'no_records'=>'لا يوجد اى سجلات',
 
 
 
 
 
-'name'=>'القسم',
+
+
+
+
+
+
+'name'=>'الاسم',
 'data_not_categories_found'=>'لا توجد اى سجلات',
 'ar'=>[
     'name'=>'الاسم باللغة العربية',
