@@ -11,8 +11,10 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('welcome');
+return view('welcome');
+
 });
 
 
@@ -21,4 +23,5 @@ Route::get('/', function () {
 
 Auth::routes(['register'=>true]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('index');
+

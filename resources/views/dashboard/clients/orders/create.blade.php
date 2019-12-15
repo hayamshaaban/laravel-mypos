@@ -111,8 +111,8 @@
 
                         <div class="box-body">
 
-{{--                            <form action="{{ route('dashboard.clients.orders.store', $client->id) }}" method="post">
---}}
+                       <form action="{{ route('dashboard.clients.orders.store', $client->id) }}" method="post">
+
                                 {{ csrf_field() }}
                                 {{ method_field('post') }}
 
@@ -144,7 +144,7 @@
 
                     </div><!-- end of box -->
 
-                   {{-- @if ($client->orders->count() > 0)
+                    @if ($client->orders->count() > 0)
 
                         <div class="box box-primary">
 
@@ -196,7 +196,7 @@
 
                         </div><!-- end of box -->
 
-                    @endif--}}
+                    @endif
 
                 </div><!-- end of col -->
 

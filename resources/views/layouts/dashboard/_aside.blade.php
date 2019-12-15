@@ -7,7 +7,7 @@
                 <img src="{{ asset('dashboard_files/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p class="hidden-xs">{{ auth()->user()->first_name }}  {{ auth()->user()->last_name }}</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -31,6 +31,9 @@
 
             @if (auth()->user()->hasPermission('read_clients'))
             <li><a href="{{route('dashboard.clients.index')}}"><i class="fa fa-th"></i><span>@lang('site.clients')</span></a></li>
+            @endif
+            @if (auth()->user()->hasPermission('read_orders'))
+            <li><a href="{{route('dashboard.orders.index')}}"><i class="fa fa-th"></i><span>@lang('site.orders')</span></a></li>
             @endif
 
             

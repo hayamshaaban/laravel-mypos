@@ -117,6 +117,7 @@ return [
     'uploaded' => 'The :attribute failed to upload.',
     'url' => 'The :attribute format is invalid.',
     'uuid' => 'The :attribute must be a valid UUID.',
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -146,6 +147,30 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'permissions'           =>'permissions',
+        'image'                 =>'image',
+        'category_id'           =>'category_id',
+        'purchase_price'        =>'purchase_price ',
+        'sale_price'            =>'sale_price ',
+        'stock'                 =>'stock',
+        'phone.0'               =>'phone.0 ',
+
+
+
+        'ar'                    =>[
+        'name'                  =>'Arabic name',
+        'title'                 =>'Arabic title',
+        'description'           =>'Arabic description',
+
+        
+        ],
+        'en'                    =>[
+        'name'                  =>'English name',
+        'title'                 =>'English title',
+        'description'           =>'English description '
+
+        ],
+    ],
 
 ];

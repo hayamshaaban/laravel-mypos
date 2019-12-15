@@ -16,4 +16,7 @@ class Category extends Model
     public function products(){
         return $this->hasMany('App\Product');
     }
+    public function getNameAttribute($value){
+        return ucfirst($value);
+    }
 }

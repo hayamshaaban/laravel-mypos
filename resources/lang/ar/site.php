@@ -19,6 +19,11 @@ return [
 'confirm_delete'=>'هل تريد الحذف؟',
 'add'=>'اضف',
 'read'=>'عرض',
+'show'=>'عرض',
+'print'=>'طبع',
+'loading'=>'جارى التحميل',
+
+
 
 'edit'=>'تعديل',
 'update'=>'تعديل',
@@ -31,6 +36,8 @@ return [
 'deleted_succefully'=>'تم حذف البيانات بنجاح',
 'logout'=>'تسجبل خروج ',
 'data_not_found'=>'لا توجد اى نتائج',
+'edit_order'=>'تعديل الطلب',
+'previous_orders'=>'الطلبات السابقة',
 
 'categories'=>'الأقسام',
 'category'=>'اسم القسم',
@@ -43,9 +50,17 @@ return [
 'description'=>'الوصف',
 'products_count'=>'عدد المنتجات',
 'related_products'=>' المنتجات المرتبطة',
+'show_products'=>' عرض المنتجات',
+
+
+
 
 
 'clients'=>'العملاء',
+'client_name'=>'اسم العميل',
+'created_at'=>'تم اضافته',
+
+
 'data_not_clients_found'=>'للاسف لا يوجد اى عملاء',
 'name'=>'الاسم',
 'phone'=>'الهاتف',

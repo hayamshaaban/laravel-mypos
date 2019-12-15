@@ -14,6 +14,9 @@ class Order extends Model
     }
     public function products()
     {
-     return $this->hasMany('App\Product','product_order');
+     return $this->belongsToMany('App\Product','product_order')->withPivot('quantity');
+    }
+    public function getNameAttribute($value){
+        return ucfirst($value);
     }
 }
